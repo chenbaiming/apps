@@ -1,0 +1,8 @@
+# 本地开发只需要 Redis；Web、Celery Worker 和 Beat 建议分别启动以便观察日志。
+services:
+  redis:
+    image: redis:7-alpine
+    container_name: database-manager-redis
+    ports:
+      - "6379:6379"
+    restart: unless-stopped
